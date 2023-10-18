@@ -1,4 +1,4 @@
-#ifndef IO_H
+#ifndef IO_H // [CR] instead of #ifndef it is better to use "#if !defined(IO_H)"
 #define IO_H
 
 // Define ANSI color escape codes

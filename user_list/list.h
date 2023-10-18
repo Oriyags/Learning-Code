@@ -1,10 +1,10 @@
-#ifndef LIST_H
+#ifndef LIST_H // [CR] use #if !defined(LIST_H)
 #define LIST_H
 
 // Define the List structure
 typedef struct {
     int* data;
-    int size;
+    int size;		// [CR] comment! what is size? the size in bytes or the length of the list?
 } List;
 
 // Function prototypes for list manipulation
