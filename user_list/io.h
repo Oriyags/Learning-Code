@@ -1,7 +1,13 @@
 #ifndef IO_H
 #define IO_H
 
-void printList(const int* list, int size);
-int parseInput(const char* input, char* command, char* argument);
+// Define ANSI color escape codes
+#define ANSI_COLOR_GREEN "\x1b[32m"
+#define ANSI_COLOR_YELLOW "\x1b[33m"
+#define ANSI_COLOR_PINK "\x1b[35m"
+#define ANSI_COLOR_RESET "\x1b[0m"
+
+// Function to print the list
+void print_list(const int* list, int size);
 
 #endif
