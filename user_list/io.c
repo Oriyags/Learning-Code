@@ -10,6 +10,7 @@ void print_list(const int* list, int size) {
     printf("\n");
 }
 
+// [CR] sounds like 2 functions to me... Single responsibility!!!, each function does one thing and one thing only!
 int display_menu_and_get_choice() {
     int choice;
 
@@ -27,6 +28,7 @@ int display_menu_and_get_choice() {
 
     return choice;
 }
+
 
 int get_user_choice() {
     char input[100];
