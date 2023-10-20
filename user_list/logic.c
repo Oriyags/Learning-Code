@@ -4,6 +4,9 @@
 #include "list.h"
 #include "logic.h"
 
+// [CR] again... Single resposibility, each function does one thing and one thing only
+// [CR] this function is supposed to "process choice" but it also takes input from the user
+// [CR] to take input from the user you have an IO file and not a logic file.
 void process_choice(List* my_list, int choice) {
     switch (choice) {
         case 1:
