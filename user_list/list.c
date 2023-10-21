@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
+#include "colors.h"
 
 void initialize_list(List* list) {
     list->data = NULL;

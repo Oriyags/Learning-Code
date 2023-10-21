@@ -1,14 +1,17 @@
-#if !defined(IO_H)
+#ifndef IO_H
 #define IO_H
+#include <stdio.h>
+#include <stdlib.h>
+#include "colors.h"
 
-#define ANSI_COLOR_GREEN "\x1b[32m"
-#define ANSI_COLOR_YELLOW "\x1b[33m"
-#define ANSI_COLOR_PINK "\x1b[35m"
-#define ANSI_COLOR_RESET "\x1b[0m"
-
+// Print a list of integers
 void print_list(const int* list, int size);
+
+// Get the user's choice
 int get_user_choice();
-int display_menu_and_get_choice();
+
+// Display the menu
+void display_menu();
 
 #endif
 
