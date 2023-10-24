@@ -1,3 +1,4 @@
+// [CR] use "if !defined(COLORS_H)"
 #ifndef COLORS_H
 #define COLORS_H 
 

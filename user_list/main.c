@@ -1,8 +1,10 @@
 #include <stdio.h>
-#include "io.h"
+#include "io.h" // [CR] you don't use anything from io.h in here, there is no need to include it
 #include "list.h"
 #include "logic.h"
 #include "colors.h" 
+
+// [CR] you have a bug: for some reason entering a letter as an input will break your program.
 
 int main() {
     List my_list;

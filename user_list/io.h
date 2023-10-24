@@ -1,4 +1,4 @@
-#ifndef IO_H
+#ifndef IO_H // [CR] #if !defined(IO_H)
 #define IO_H
 #include <stdio.h>
 #include <stdlib.h>
