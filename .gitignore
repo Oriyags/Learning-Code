@@ -3,3 +3,7 @@
 *.bin
 *.exe
 *.out
+
+*/obj
+*/bin
+*/objs
