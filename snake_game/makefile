@@ -12,14 +12,16 @@ EXECUTABLE := $(OBJ_DIR)/snake_game
 
 # Compiler settings
 CC = gcc
-CFLAGS = -I$(INCLUDE) -Wall -Werror -lncurses
+CFLAGS = -I$(INCLUDE) -Wall -Werror
+# Add -lncurses to link with the ncurses library
+LIBS = -lncurses
 
 # Targets
 all: $(EXECUTABLE)
 
 # Link
 $(EXECUTABLE): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)  # Include $(LIBS) to link with ncurses
 
 # Compile objects
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c

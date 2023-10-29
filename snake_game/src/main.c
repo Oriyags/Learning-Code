@@ -5,12 +5,9 @@
 #include "game_board.h"
 #include "print.h"
 
-int is_game_over = 0;
-
 int main() {
     initscr(); // Initialize ncurses mode
     initialize_game();
-    initialize_game_board();///
 
     // Main game loop
     while (!is_game_over) {
@@ -24,11 +21,10 @@ int main() {
             break; // Exit the game loop
         } else {
             is_game_over = 0;
-            initialize_game_board();
+            initialize_game_board(); // Reinitialize the game board
         }
     }
 
     endwin(); // End ncurses mode
     return 0;
 }
-

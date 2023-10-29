@@ -8,4 +8,6 @@
 extern int game_board[BOARD_HEIGHT][BOARD_WIDTH];
 extern int is_game_over;
 
+void initialize_game_board();
+
 #endif
