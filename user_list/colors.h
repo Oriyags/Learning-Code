@@ -1,5 +1,4 @@
-// [CR] use "if !defined(COLORS_H)"
-#ifndef COLORS_H
+#if !defined(COLORS_H)
 #define COLORS_H 
 
 // Define ANSI color codes

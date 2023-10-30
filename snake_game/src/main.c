@@ -6,7 +6,7 @@
 #include "print.h"
 
 int main() {
-    initscr(); // Initialize ncurses mode
+    //initscr(); // Initialize ncurses mode
     initialize_game();
 
     // Main game loop

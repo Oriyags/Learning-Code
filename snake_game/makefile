@@ -12,7 +12,7 @@ EXECUTABLE := $(OBJ_DIR)/snake_game
 
 # Compiler settings
 CC = gcc
-CFLAGS = -I$(INCLUDE) -Wall -Werror
+CFLAGS = -I$(INCLUDE) -Wall -Werror -g
 # Add -lncurses to link with the ncurses library
 LIBS = -lncurses
 

@@ -1,5 +1,6 @@
-#ifndef LIST_H // [CR] #if !defined(LIST_H)
+#if !defined(LIST_H)
 #define LIST_H
+
 #include "colors.h"
 
 // Structure to represent a list
