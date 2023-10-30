@@ -2,6 +2,7 @@
 #include "list.h"
 #include "logic.h"
 #include "colors.h"
+#include "io.h"
 
 int main() {
     List my_list;
@@ -9,14 +10,14 @@ int main() {
 
     printf(ANSI_COLOR_GREEN "Welcome to the List Manipulation Program!\n" ANSI_COLOR_RESET);
 
-/* 
-[CR] Already told you this in the last CR: this function (run_list_program) should not exist at all, "run list program" is what the main function do, its whole purpose.
-The main function should have the main program loop (while(1)) that calls other functions and utils.
-The code from run_list_program SHOULD be in the main function.
-*/
-    run_list_program(&my_list);
+    int choice;
+    while (1) {
+        display_menu();
+        choice = get_user_choice(); 
+        process_choice(&my_list, choice);
+    }
 
-    clear_list(&my_list); // Clear the list before exiting
-    
+    clear_list(&my_list);
+
     return 0;
 }
