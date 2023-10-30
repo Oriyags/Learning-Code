@@ -28,7 +28,7 @@ void process_choice(List* my_list, int choice) {
     }
 }
 
-// Run the list manipulation program
+// Run the list manipulation program [CR] move this code into the main function, this function is useless
 void run_list_program(List* my_list) {
     int choice;
     while (1) {
