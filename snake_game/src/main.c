@@ -6,25 +6,36 @@
 #include "print.h"
 
 int main() {
-    //initscr(); // Initialize ncurses mode
-    initialize_game();
+    initscr();
+    char choice = 'Y';
 
-    // Main game loop
-    while (!is_game_over) {
+    while (choice == 'Y' || choice == 'y') {
+        clear();
+        printw("Press Enter to start the game.");
+        refresh();
+        getch(); // Wait for Enter key press
+        clear();
+
+        initialize_game();
         run_game();
 
         // Ask the player if they want to play again
-        printw("Play again? (Y/N): "); // Use printw for ncurses
-        char choice = getch(); // Use getch for ncurses
+        if (!is_game_over) {
+            printw("Play again? (Y/N): ");
+            choice = getch();
+        } else {
+            printw("Game Over. Play again? (Y/N): ");
+            choice = getch();
+        }
 
         if (choice == 'n' || choice == 'N') {
-            break; // Exit the game loop
-        } else {
-            is_game_over = 0;
-            initialize_game_board(); // Reinitialize the game board
+            break;
         }
+
+        is_game_over = 0;
+        initialize_game_board();
     }
 
-    endwin(); // End ncurses mode
+    endwin();
     return 0;
 }
