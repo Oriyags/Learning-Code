@@ -4,6 +4,7 @@
 *.exe
 *.out
 
+/obj
 */obj
 */bin
 */objs

@@ -1,4 +1,4 @@
-#ifndef FOOD_H
+#if !defined(FOOD_H)
 #define FOOD_H
 
 extern const int width;
@@ -7,7 +7,7 @@ extern const int height;
 extern int fruitX;
 extern int fruitY;
 
-void SetupFood();
-void DrawFood();
+void Setup_food();
+void Draw_food();
 
 #endif

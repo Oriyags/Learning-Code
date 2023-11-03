@@ -1,7 +1,7 @@
 #include "game.h"
 #include <unistd.h> // Include the header for usleep
 
-const int width = 20;
+const int width = 15;
 const int height = 10;
 
 int main() {

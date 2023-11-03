@@ -10,16 +10,16 @@ int nTail;
 enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN };
 enum eDirection dir;
 
-void SetupSnake() {
-    dir = RIGHT; // Initial direction (e.g., right)
+void Setup_snake() {
+    dir = RIGHT;
     x = width / 2;
     y = height / 2;
     score = 0;
     nTail = 0;
 }
 
-void DrawSnake() {
-    system("clear"); // Use "clear" to clear the terminal (for Unix-like systems)
+void Draw_snake() {
+    system("clear");
     for (int i = 0; i < width + 2; i++)
         printf("#");
 
@@ -55,7 +55,7 @@ void DrawSnake() {
     printf("Score: %d\n", score);
 }
 
-void MoveSnake() {
+void Move_snake() {
     int prevX = tailX[0];
     int prevY = tailY[0];
     int prev2X, prev2Y;
@@ -70,28 +70,42 @@ void MoveSnake() {
         prevY = prev2Y;
     }
 
+    int diffX = fruitX - x;
+    int diffY = fruitY - y;
+
+    // Calculate direction to the food
+    if (diffX > 0) {
+        dir = RIGHT;
+    } else if (diffX < 0) {
+        dir = LEFT;
+    } else if (diffY > 0) {
+        dir = DOWN;
+    } else if (diffY < 0) {
+        dir = UP;
+    }
+
     switch (dir) {
-    case LEFT:
-        x--;
-        break;
-    case RIGHT:
-        x++;
-        break;
-    case UP:
-        y--;
-        break;
-    case DOWN:
-        y++;
-        break;
-    default:
-        break;
+        case LEFT:
+            x--;
+            break;
+        case RIGHT:
+            x++;
+            break;
+        case UP:
+            y--;
+            break;
+        case DOWN:
+            y++;
+            break;
+        default:
+            break;
     }
 
     if (x >= width) x = 0; else if (x < 0) x = width - 1;
     if (y >= height) y = 0; else if (y < 0) y = height - 1;
 }
 
-int CheckCollision() {
+int Check_collision() {
     for (int i = 0; i < nTail; i++) {
         if (tailX[i] == x && tailY[i] == y)
             return 1;
@@ -99,11 +113,11 @@ int CheckCollision() {
     return 0;
 }
 
-void CheckFoodCollision() {
+void Check_food_collision() {
     if (x == fruitX && y == fruitY) {
         score += 10;
+        nTail++;
         fruitX = rand() % width;
         fruitY = rand() % height;
-        nTail++;
     }
 }
