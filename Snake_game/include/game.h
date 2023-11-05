@@ -5,8 +5,8 @@
 
 extern int gameOver;
 
-void Setup();
-void Draw();
-void Logic();
+void Setup(); // Initialize the game
+void Draw();  // Draw the game board
+void Logic(); // Perform game logic
 
 #endif

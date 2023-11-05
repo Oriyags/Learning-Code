@@ -5,11 +5,11 @@ const int width = 15;
 const int height = 10;
 
 int main() {
-    Setup();
+    Setup(); // Initialize the game
     while (!gameOver) {
-        Draw();
-        Logic();
-        usleep(100000); // Use usleep for a delay of 100 milliseconds
+        Draw();  // Draw the game board
+        Logic(); // Execute game logic
+        usleep(100000); // Delay for 100 milliseconds
     }
     return 0;
 }

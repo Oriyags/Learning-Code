@@ -8,8 +8,8 @@ int gameOver;
 
 void Setup() {
     gameOver = 0;
-    Setup_snake();
-    Setup_food();
+    Setup_snake(); // Initialize the snake
+    Setup_food();  // Initialize the food
 }
 
 void ClearConsole() {
@@ -18,7 +18,7 @@ void ClearConsole() {
 }
 
 void Draw() {
-    ClearConsole();
+    ClearConsole(); // Clear the console
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             if (i == 0 || i == height - 1 || j == 0 || j == width - 1)
@@ -29,15 +29,19 @@ void Draw() {
         printf("\n");
     }
 
-    Draw_snake();
-    Draw_food();
+    Draw_snake(); // Draw the snake on the game board
+    Draw_food();  // Draw the food on the game board
 }
 
 void Logic() {
-    Move_snake();
+    Move_snake();     // Move the snake
     if (Check_collision()) {
-        gameOver = 1;
+        gameOver = 1;  // Set the game over flag if there's a collision
         return;
     }
-    Check_food_collision();
+    if (Check_corner_collision()) {
+        gameOver = 1;  // Set the game over flag if there's a corner collision
+        return;
+    }
+    Check_food_collision(); // Check for collisions with food
 }
