@@ -2,6 +2,10 @@ import random
 import requests
 from rich import print as rprint
 
+# [CR] MOVE COMMENTS <3
+
+# [CR] there is no need for this
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Define the URL for the wordlist website and the file for the wordlist file
 wordlist_url = "https://www.mit.edu/~ecprice/wordlist.10000"
 wordlist_file = "wordlist.txt"
@@ -17,7 +21,7 @@ def fetch_words_from_website(url, file):
             rprint("[bold red]Failed to fetch words from the website.[/bold red]")
     except requests.exceptions.RequestException as e:
         rprint("[bold red]An error occurred:[/bold red] " + str(e))
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Read words from a file and store them in a list
 def get_words_from_file(file):
     try:
