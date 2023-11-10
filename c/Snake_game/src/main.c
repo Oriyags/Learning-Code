@@ -5,8 +5,8 @@
 #include "logic.h"
 #include <unistd.h>
 
-const int width = 15;
-const int height = 10;
+const int width = 35;
+const int height = 20;
 
 int main() {
     Setup(); // Initialize the game
