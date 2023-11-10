@@ -2,7 +2,8 @@
     "files.associations": {
         "unistd.h": "c",
         "game.h": "c",
-        "food.h": "c"
+        "food.h": "c",
+        "ui.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

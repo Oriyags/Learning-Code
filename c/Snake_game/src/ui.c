@@ -5,13 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "ui.h"
-#include "food.h"
-#include "snake.h"
-#include "game.h"
-#include <stdio.h>
-#include <stdlib.h>
-
 // Draw the snake and food on the game board
 void Draw() {
     system("clear"); // Clear the console
