@@ -1,15 +1,26 @@
-#if !defined(SNAKE_H)
+#ifndef SNAKE_H
 #define SNAKE_H
 
-// Game board's width and height
+#include "game.h"
+
 extern const int width;
 extern const int height;
+extern int x, y, nTail;
+extern int tailX[100], tailY[100];
 
-void Setup_snake();         // Initialize the snake
-void Draw_snake();          // Draw the snake on the game board
-void Move_snake();          // Move the snake
-int Check_collision();      // Check for collisions with the snake
-void Check_food_collision(); // Check for collisions with food
-int Check_corner_collision(); // Check for collisions with corners
+enum eDirection {
+    STOP = 0,
+    LEFT,
+    RIGHT,
+    UP,
+    DOWN
+};
+
+extern enum eDirection dir;
+
+void Setup_snake();
+int Check_collision();
+void Check_food_collision();
+int Check_corner_collision();
 
 #endif

@@ -1,0 +1,31 @@
+from datetime import datetime
+import time, random
+
+from socket import *
+
+SERVER_NAME = 'WetCat'
+
+'''  defining a server socket that waits for a request from the client'''
+server_socket = socket() # new socket - connection
+print ('creating socket')
+server_socket.bind (('', 8200)) # init socket, server-socket
+print('binding socket')
+server_socket.listen(1) # listening for client on port 8200
+print ('listening')
+client, add = server_socket.accept() # accept client, saves the client's socket, IP and Port
+message = client.recv (1024).decode() # recieve client's message 'HELLO'.encode() -> binary | 0b100.decode -> String
+print (f'message recieved from {add[0]}: {message}')
+
+if message == 'TIME':
+ 	client.send((datetime.now().strftime("%Y-%m-%d %H:%M:%S")).encode())
+elif message == 'RANDOM':
+	client.send(f'{random.randrange(0, 1000)}'.encode())
+elif message == 'NAME':
+	client.send(SERVER_NAME.encode())
+else:
+	client.send('ERROR'.encode())
+
+client.send (f'message recieved:{message}'.encode()) # send a message to the client
+client.close() # close the connection
+
+server_socket.close() # close the connection

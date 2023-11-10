@@ -4,9 +4,9 @@
 #include "snake.h"
 
 extern int gameOver;
+extern int score;
 
-void Setup(); // Initialize the game
-void Draw();  // Draw the game board
-void Logic(); // Perform game logic
+void ClearConsole();
+void Setup();
 
 #endif

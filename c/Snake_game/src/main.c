@@ -1,5 +1,9 @@
 #include "game.h"
-#include <unistd.h> // Include the header for usleep
+#include "food.h"
+#include "snake.h"
+#include "ui.h"
+#include "logic.h"
+#include <unistd.h>
 
 const int width = 15;
 const int height = 10;
