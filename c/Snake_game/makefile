@@ -29,7 +29,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(shell dirname $@)
 	${CC} ${CFLAGS} -c -o $@ $<
 
-run:
+run: all
 	$(EXECUTABLE)
 
 clean:

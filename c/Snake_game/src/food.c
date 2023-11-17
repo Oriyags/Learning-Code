@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+// [CR] food is nothing more than a data structure, it does not need a script and should be initiated at main.
 int fruitX, fruitY;
 
 void Setup_food() {

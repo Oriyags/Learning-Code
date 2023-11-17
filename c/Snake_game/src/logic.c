@@ -29,6 +29,8 @@ void Move_snake() {
         prevY = prev2Y;
     }
 
+    // [CR] should not be in the function that moves the snake; the function that moves the snake should only move it based on the current direction
+    // [CR] and this code should be in a function that changes the snake's direction based on the game state
     // Calculate direction to the food
     if (abs(diffX) > abs(diffY)) {
         // Move horizontally
@@ -83,9 +85,9 @@ void Logic() {
         gameOver = 1;  // Set the game over flag if there's a collision
         return;
     }
-    if (Check_corner_collision()) {
-        gameOver = 1;  // Set the game over flag if there's a corner collision
-        return;
-    }
+    //if (Check_corner_collision()) {
+    //    gameOver = 1;  // Set the game over flag if there's a corner collision
+    //    return;
+    //}
     Check_food_collision(); // Check for collisions with food
 }
