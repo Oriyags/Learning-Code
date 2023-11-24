@@ -1,20 +1,35 @@
+; Write a print function that... prints!
+; Use progloge and epilogue.
+; The function will take the string and string's length from variables you define in the .data section.
 
 global _start
 
-section .data
-str_wet_cat: db "I am a wet, wet cat"
-str_wc_len: equ $ - str_wet_cat
-
-section .text			; using a text section for code
-_start:				; address of first instruction
-
-	mov rax, 1		; sys_write(
-	mov rdi, 1		;	stdout,
-	mov rsi, str_wet_cat	;	string,
-	mov rdx, str_wc_len	;	length
-	syscall			;); 
+section .text
+_start:
 	
-	; exit the program
-	mov rax, 60		; sys_exit(
-	mov rdi, 0		; 	error code
-	syscall			; );		
+	call print
+	mov rax, 60	; sys_exit
+	mov rdi, 0	; Ok
+	syscall		; ma sheilon amar
+
+
+print:
+	
+	push rbp
+	mov rbp, rsp
+		
+	mov rax, 1
+	mov rdi, 0
+	mov rsi, string
+	mov rdx, length
+	syscall
+
+	mov rsp, rbp	
+	pop rbp
+	ret
+
+
+section .data
+
+string: db "Oriya Loves Cats (Eylon)"	
+length: equ $ - string
