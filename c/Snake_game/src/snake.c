@@ -11,6 +11,10 @@ int x, y, score;
 int tailX[100], tailY[100];
 int nTail;
 
+/*
+[CR] after you will move the snake data into a single struct in main, all the setup functions are useless.
+Anyway, you should **init** the data in the main script as it is in there.
+*/
 // Initialize the snake
 void Setup_snake() {
     dir = RIGHT;  // Set the initial direction to right

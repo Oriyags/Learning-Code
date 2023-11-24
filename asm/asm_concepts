@@ -1,0 +1,31 @@
+cpu<----->ram
+
+add = opcode 00000100
+
+register is a 32(/16/64)-bit, fast, small data holder
+
+eip = instruction pointer register [-----32bit-address-----]
+ip  [16 bits]
+eip [32 bits]
+rip [64 bits]
+
+loop:
+	cpu <--fetch-- ram[eip]
+	cpu --decode--
+	cpu --execute-> cpu/ram
+	eip += 1
+
+jmp 0x367      -> eip = 0x367
+  [dest] <--[src]
+mov eip, 0x367 -> eip = 0x367
+
+section .data (initialized data)
+
+section .bss (uninitalized data)
+
+section .text (code)
+
+nyble [4 bits]
+byte  [8 bits]
+word  [2 bytes/16 bits]
+dword [2 words/32 bits]

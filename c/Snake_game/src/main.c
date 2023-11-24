@@ -11,6 +11,7 @@ const int height = 20;
 int main() {
     Setup(); // Initialize the game
     while (!gameOver) {
+	// [CR] [PROTOYPE] auto_snake(const [game state], *[snake's direction]);
         Draw();  // Draw the game board
         Logic(); // Execute game logic
         usleep(100000); // Delay for 100 milliseconds

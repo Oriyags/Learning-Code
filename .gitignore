@@ -4,9 +4,8 @@
 *.exe
 *.out
 
-/obj
-*/obj
-*/bin
-*/objs
+obj/
+bin/
+objs/
 
-*/.vscode
+*/.vscode/

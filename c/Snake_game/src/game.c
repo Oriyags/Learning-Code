@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
+// [CR] this script seems pretty useless. And why is there a ClearConsole (clear_console*) function in here? move it to UI
 int gameOver;
 
 void Setup() {
