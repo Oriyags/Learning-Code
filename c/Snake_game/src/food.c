@@ -6,7 +6,7 @@
 // [CR] food is nothing more than a data structure, it does not need a script and should be initiated at main.
 int fruitX, fruitY;
 
-void Setup_food() {
+void setup_food() {
     srand(time(NULL));
     
     // Randomly position the food

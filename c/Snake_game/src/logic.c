@@ -7,7 +7,7 @@
 
 
 // Move the snake based on its direction
-void Move_snake() {
+void move_snake() {
     int prevX, prevY; // Declare variables at the beginning of the function
     int prev2X, prev2Y;
     int diffX = fruitX - x;
@@ -79,15 +79,7 @@ void Move_snake() {
     else if (y < 0) y = height - 1;
 }
 
-void Logic() {
-    Move_snake();     // Move the snake
-    if (Check_collision()) {
-        gameOver = 1;  // Set the game over flag if there's a collision
-        return;
-    }
-    //if (Check_corner_collision()) {
-    //    gameOver = 1;  // Set the game over flag if there's a corner collision
-    //    return;
-    //}
-    Check_food_collision(); // Check for collisions with food
+void logic() {
+    move_snake();     // Move the snake
+    check_food_collision(); // Check for collisions with food
 }

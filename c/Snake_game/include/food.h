@@ -9,6 +9,6 @@ extern const int height;
 extern int fruitX;
 extern int fruitY;
 
-void Setup_food();
+void setup_food();
 
 #endif

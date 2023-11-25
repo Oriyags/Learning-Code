@@ -30,9 +30,7 @@ enum eDirection {
 
 extern enum eDirection dir;
 
-void Setup_snake();
-int Check_collision();
-void Check_food_collision();
-int Check_corner_collision();
+void setup_snake();
+void check_food_collision();
 
 #endif

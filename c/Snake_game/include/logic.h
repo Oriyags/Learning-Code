@@ -3,8 +3,7 @@
 
 #include "snake.h"
 
-void Move_snake();
-int Check_collision();
-void Logic(); // Perform game logic
+void move_snake();
+void logic(); // Perform game logic
 
 #endif

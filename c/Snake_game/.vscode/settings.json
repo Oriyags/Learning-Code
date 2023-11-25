@@ -3,7 +3,8 @@
         "unistd.h": "c",
         "game.h": "c",
         "food.h": "c",
-        "ui.h": "c"
+        "ui.h": "c",
+        "snake.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

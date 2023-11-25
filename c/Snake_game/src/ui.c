@@ -5,9 +5,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Draw the snake and food on the game board
-void Draw() {
-    system("clear"); // Clear the console
+void clear_console() {
+    // ANSI escape code to clear the console
+    printf("\033[H\033[J");
+}
+
+void draw(struct game_state *state) {
+    clear_console(); // Clear the console
 
     // Draw the top border
     for (int i = 0; i < width + 2; i++)
@@ -22,13 +26,13 @@ void Draw() {
             int isPrinted = 0;
 
             // Check if the current position is the snake's head
-            if (i == y && j == x) {
+            if (i == state->y && j == state->x) {
                 printf("O"); // Print the snake's head
                 isPrinted = 1;
             }
 
             // Check if the current position is the snake's tail
-            for (int k = 0; k < nTail; k++) {
+            for (int k = 0; k < state->nTail; k++) {
                 if (tailX[k] == j && tailY[k] == i) {
                     printf("o"); // Print the snake's tail
                     isPrinted = 1;
@@ -56,5 +60,5 @@ void Draw() {
     printf("\n");
 
     // Display the player's score
-    printf("Score: %d\n", score);
+    printf("Score: %d\n", state->score);
 }
