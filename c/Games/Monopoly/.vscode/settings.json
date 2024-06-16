@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "player.h": "c",
-        "property.h": "c"
+        "property.h": "c",
+        "community_chest.h": "c",
+        "stdlib.h": "c",
+        "time.h": "c",
+        "msgs.h": "c",
+        "stdio.h": "c"
     }
 }
