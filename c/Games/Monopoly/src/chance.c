@@ -30,7 +30,11 @@ void draw_chance_card(player_t *player, game_t *game) {
     and divided between the other players' personal money. */
 static void pay_each_player(player_t *player, game_t *game) {
     MSG_CHANCE_CARD_PEP(player->name);      // prints the current acts on the screen
-
+    for (int i = 0; i < game->player_num; i++)
+    {
+        /* code */
+    }
+    
 
 }
 

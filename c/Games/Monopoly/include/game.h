@@ -12,14 +12,20 @@
 // #define 10
 // #define
 
-#include "player.h"
-#include "property.h"
-#include "board.h"
+#include <stdbool.h>
+#include <player.h>
+#include <property.h>
+#include <board.h>
+#include <community_chest.h>
+#include <chance.h>
 
-// 
+// Game's struct
 typedef struct {
-    player_t players[MAX_PLAYERS]; // array of players
-    int player_num; // 
+    player_t players[MAX_PLAYERS];
+    int current_player_index;
+    int player_num;
+    property_t properties[40];
+    int num_properties;
 } game_t;
 
 void initialize_game(game_t *game, int player_num);
