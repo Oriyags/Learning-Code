@@ -30,13 +30,27 @@ void draw_chance_card(player_t *player, game_t *game) {
     and divided between the other players' personal money. */
 static void pay_each_player(player_t *player, game_t *game) {
     MSG_CHANCE_CARD_PEP(player->name);      // prints the current acts on the screen
+    int amount_to_pay = 10 * num_players
     for (int i = 0; i < game->player_num; i++)
     {
-        /* code */
+        
     }
     
 
 }
+
+void payEachPlayer(Player *player, Game *game) {
+    int amount = 50; // Example amount to pay each player
+    printf("%s draws a Chance card: Pay each player $%d.\n", player->name, amount);
+    
+    for (int i = 0; i < game->numPlayers; i++) {
+        if (&game->players[i] != player) {
+            player->balance -= amount;
+            game->players[i].balance += amount;
+        }
+    }
+}
+
 
 /* Sets the current player's position to jail's,
     changes their statuse to isInJail
